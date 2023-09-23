@@ -82,7 +82,7 @@ def main(
             top_p=top_p,
         )
         for idx, (instruction, result) in enumerate(zip(batch, results)):
-            output_filename = f"{output_folder}/{instruction[0]['filename']}.txt"  # 从第一个字典中获取文件名
+            output_filename = f"{output_folder}/{instruction[0]['filename']}.txt"  #从第一个字典中获取文件名
             with open(output_filename, 'w', encoding='utf-8') as f:
                 for msg in instruction[1:]:  # 注意这里从第二个元素开始
                     f.write(f"{msg['role'].capitalize()}: {msg['content']}\n")
